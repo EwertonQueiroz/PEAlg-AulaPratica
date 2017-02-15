@@ -2,31 +2,42 @@
 #include <stdlib.h>
 
 /** Logaritmo */
-int valor = 0;
-int base = 0;
+int valor = 1;
+int base = 1;
+
+/** MDC */
+int valor2 = -2;
+int valor3 = -1;
+
+/** Torre de Hanói */
+int num_discos = 0;
 
 int main() {
     /** Log base 2 /
     while (valor <= 1) {
         printf("Informe o valor do logaritmando:\n");
         scanf("%d", &valor);
+
+        printf("\n");
     }
     printf("\nO logaritmo de %d na base 2 eh %d\n", valor, log2_piso(valor));
     //*/
 
     /** Log base N /
-    do {
+    while (valor <= 1 && base <= 1) {
         printf("Informe o valor do logaritmando:\n");
         scanf("%d", &valor);
 
         printf("Informe o valor da base:\n");
         scanf("%d", &base);
-    } while (valor <= 0 || base <= 0 && !(base * base < valor));
+
+        printf("\n");
+    }
 
     printf("\nO logaritmo de %d na base %d eh %d\n", valor, base, log_piso(valor, base));
     //*/
 
-    /** Primo */
+    /** Primo /
     printf("Informe o numero para verificar se ele eh primo:\n");
     scanf("%d", &valor);
 
@@ -38,6 +49,32 @@ int main() {
     }
 
     //*/
+
+    /** Algoritmo de Euclides /
+    while (valor2 < valor3) {
+        printf("Infome o primeiro valor:\n");
+        scanf("%d", &valor2);
+
+        printf("\nInforme o segundo valor:\n");
+        scanf("%d", &valor3);
+
+        printf("\n");
+    }
+
+    printf("MDC = %d\n", MDC(valor2, valor3));
+    //*/
+
+    /** Torre de Hanói */
+
+    while (num_discos == 0) {
+        printf("Digite o numero de discos:\n");
+        scanf("%d", &num_discos);
+    }
+
+    Transfere (num_discos, 'A', 'C', 'B');
+    //*/
+
+    return 0;
 }
 
 int log2_piso (int logaritmando) {
@@ -69,6 +106,17 @@ int MDC (int minuendo, int subtraendo) {
     resto = minuendo % subtraendo;
 
     return MDC (subtraendo, resto);
+}
+
+void Transfere (int tamanho, char origem, char destino, char auxiliar) {
+    if (tamanho == 1) {
+        return;
+    }
+
+    else {
+        Transfere (tamanho - 1, origem, auxiliar, destino);
+        Transfere (tamanho - 1, auxiliar, destino, origem);
+    }
 }
 
 int verificar_primo (int numero) {

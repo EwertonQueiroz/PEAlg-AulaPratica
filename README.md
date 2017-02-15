@@ -4,5 +4,4 @@ Disciplina: Prática de Ensino de Algoritmos
 
 Aula Prática
 
-
 2016.2
