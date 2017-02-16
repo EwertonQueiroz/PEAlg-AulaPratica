@@ -12,63 +12,63 @@ int valor3 = -1;
 /** Torre de Hanói */
 int num_discos = 0;
 
-int main() {
+int main () {
     /** Log base 2 /
     while (valor <= 1) {
-        printf("Informe o valor do logaritmando:\n");
-        scanf("%d", &valor);
+        printf ("Informe o valor do logaritmando:\n");
+        scanf ("%d", &valor);
 
-        printf("\n");
+        printf ("\n");
     }
-    printf("\nO logaritmo de %d na base 2 eh %d\n", valor, log2_piso(valor));
+    printf ("\nO logaritmo de %d na base 2 eh %d\n", valor, log2_piso (valor));
     //*/
 
     /** Log base N /
     while (valor <= 1 && base <= 1) {
-        printf("Informe o valor do logaritmando:\n");
-        scanf("%d", &valor);
+        printf ("Informe o valor do logaritmando:\n");
+        scanf ("%d", &valor);
 
-        printf("Informe o valor da base:\n");
-        scanf("%d", &base);
+        printf ("Informe o valor da base:\n");
+        scanf ("%d", &base);
 
-        printf("\n");
+        printf ("\n");
     }
 
-    printf("\nO logaritmo de %d na base %d eh %d\n", valor, base, log_piso(valor, base));
+    printf ("\nO logaritmo de %d na base %d eh %d\n", valor, base, log_piso (valor, base));
     //*/
 
     /** Primo /
-    printf("Informe o numero para verificar se ele eh primo:\n");
-    scanf("%d", &valor);
+    printf ("Informe o numero para verificar se ele eh primo:\n");
+    scanf ("%d", &valor);
 
     if (verificar_primo(valor) == 0) {
-        printf("\nO numero %d nao eh primo.\n", valor);
+        printf ("\nO numero %d nao eh primo.\n", valor);
     }
     else {
-        printf("\nO numero %d eh primo.\n", valor);
+        printf ("\nO numero %d eh primo.\n", valor);
     }
 
     //*/
 
     /** Algoritmo de Euclides /
     while (valor2 < valor3) {
-        printf("Infome o primeiro valor:\n");
-        scanf("%d", &valor2);
+        printf ("Infome o primeiro valor:\n");
+        scanf ("%d", &valor2);
 
-        printf("\nInforme o segundo valor:\n");
-        scanf("%d", &valor3);
+        printf ("\nInforme o segundo valor:\n");
+        scanf ("%d", &valor3);
 
-        printf("\n");
+        printf ("\n");
     }
 
-    printf("MDC = %d\n", MDC(valor2, valor3));
+    printf ("MDC = %d\n", MDC(valor2, valor3));
     //*/
 
-    /** Torre de Hanói */
+    /** Torre de Hanói /
 
     while (num_discos == 0) {
-        printf("Digite o numero de discos:\n");
-        scanf("%d", &num_discos);
+        printf ("Digite o numero de discos:\n");
+        scanf ("%d", &num_discos);
     }
 
     Transfere (num_discos, 'A', 'C', 'B');
@@ -128,7 +128,7 @@ int verificar_primo (int numero) {
         return 1;
     }
 
-    int limite = sqrt(numero);
+    int limite = sqrt (numero);
 
     return (verificar_primo_aux (numero, limite) == 0) ? 0 : 1;
 }
