@@ -64,7 +64,7 @@ int main () {
     printf ("MDC = %d\n", MDC(valor2, valor3));
     //*/
 
-    /** Torre de Hanói /
+    /** Torre de Hanói */
 
     while (num_discos == 0) {
         printf ("Digite o numero de discos:\n");
