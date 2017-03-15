@@ -96,16 +96,16 @@ int log_piso (int logaritmando, int base) {
     return log_piso (logaritmando / base, base) + 1;
 }
 
-int MDC (int minuendo, int subtraendo) {
+int MDC (int dividendo, int divisor) {
     int resto;
 
-    if (subtraendo == 0) {
-        return minuendo;
+    if (divisor == 0) {
+        return dividendo;
     }
 
-    resto = minuendo % subtraendo;
+    resto = dividendo % divisor;
 
-    return MDC (subtraendo, resto);
+    return MDC (divisor, resto);
 }
 
 void Transfere (int tamanho, char origem, char destino, char auxiliar) {
